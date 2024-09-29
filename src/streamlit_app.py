@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from model_utils import load_model
 
 # Load the prediction model
-model = load_model('./model/wire_rod_model_xgb.pkl')
+model = load_model('src/model/wire_rod_model_xgb.pkl')
 
 # Load the dataset for visualization
 df = pd.read_csv('./visual/Aluminium-Sheet1.csv', header=1)
