@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 from model_utils import load_model
 
 # Load the prediction model
-model = load_model('wire_rod_model_xgb.pkl')
+model = load_model(r'C:\Users\RISHABH\OneDrive\Desktop\New folder\SIH-nalco-problem-statement\src\model\wire_rod_model_xgb.pkl')
 
 # Load the dataset for visualization
-df = pd.read_csv('./visual/Aluminium-Sheet1.csv', header=1)
+df = pd.read_csv(r'C:\Users\RISHABH\OneDrive\Desktop\New folder\SIH-nalco-problem-statement\src\Aluminium-Sheet1.csv', header=1)
 df.columns = df.columns.str.strip()  # Clean up column names
 sorted_df = pd.DataFrame()
 for col in df.columns:
