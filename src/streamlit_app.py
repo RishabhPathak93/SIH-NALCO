@@ -3,8 +3,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from model_utils import load_model
 
-# Load the prediction model
-model = load_model(r'C:\Users\RISHABH\OneDrive\Desktop\New folder\SIH-nalco-problem-statement\src\model\wire_rod_model_xgb.pkl')
+import joblib
+
+def load_model(model_path):
+    model = joblib.load(model_path)
+    return model
+
+# Use a relative path
+model = load_model('model/wire_rod_model_xgb.pkl')
+
 
 # Load the dataset for visualization
 df = pd.read_csv(r'C:\Users\RISHABH\OneDrive\Desktop\New folder\SIH-nalco-problem-statement\src\Aluminium-Sheet1.csv', header=1)
