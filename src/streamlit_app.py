@@ -3,14 +3,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from model_utils import load_model
 
-import joblib
+import os
 
 def load_model(model_path):
+    print(f"Current working directory: {os.getcwd()}")  # Log current working directory
+    print(f"Loading model from: {model_path}")  # Debugging statement
     model = joblib.load(model_path)
     return model
 
-# Use a relative path
-model = load_model('./model/wire_rod_model_xgb.pkl')
+# Load the model
+model = load_model('model/wire_rod_model_xgb.pkl')
+
 
 
 # Load the dataset for visualization
