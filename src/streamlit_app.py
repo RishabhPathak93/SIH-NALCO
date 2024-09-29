@@ -10,7 +10,7 @@ def load_model(model_path):
     return model
 
 # Use a relative path
-model = load_model('model/wire_rod_model_xgb.pkl')
+model = load_model('./model/wire_rod_model_xgb.pkl')
 
 
 # Load the dataset for visualization
