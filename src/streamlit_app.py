@@ -2,19 +2,11 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from model_utils import load_model
-
 import os
+import joblib
 
-def load_model(model_path):
-    print(f"Current working directory: {os.getcwd()}")  # Log current working directory
-    print(f"Loading model from: {model_path}")  # Debugging statement
-    model = joblib.load(model_path)
-    return model
-
-# Load the model
-model = load_model('model/wire_rod_model_xgb.pkl')
-
-
+# Load the prediction model
+model = load_model(r'C:\Users\RISHABH\OneDrive\Desktop\New folder\SIH-nalco-problem-statement\src\model\wire_rod_model_xgb.pkl')
 
 # Load the dataset for visualization
 df = pd.read_csv(r'C:\Users\RISHABH\OneDrive\Desktop\New folder\SIH-nalco-problem-statement\src\Aluminium-Sheet1.csv', header=1)
@@ -25,6 +17,11 @@ for col in df.columns:
 
 # App title
 st.title("Aluminium Wire Rod Dashboard")
+
+# Add a Home button with a link
+if st.button('Home'):
+    st.markdown("<a href='https://aluminium-inky.vercel.app/' target='_blank'>Go to Home</a>", unsafe_allow_html=True)
+
 
 # Create tabs for different functionalities
 tab1, tab2 = st.tabs(["Prediction", "Visualization"])
